@@ -1,0 +1,85 @@
+<style>
+body {
+   background: #000000;
+}
+
+h1 {
+   font-weight: bold;
+   text-align: center;
+   color: orange;
+}
+h2{
+  text-align:center;
+  color: white;
+  font-size: 15px;
+}
+.center{
+  padding:70px 0;
+  text-align:center;
+  margin:auto;
+  width: 50%;
+  top: 50%;
+  position: relative;
+}
+.text{
+  color:yellow;
+  background-color: black;
+  text-align: center;
+}
+.label{
+	text-align:center;
+	width:50%;
+	color: rgba(white, .5);
+  	font: 400 $width/15 Roboto;
+  	background-color: yellow;
+}
+.loader {
+    border: 16px solid #f3f3f3; /* Light grey */
+    border-top: 16px solid #ffff00; /* Blue */
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+</style>
+<script type="text/javascript">
+(function(){
+   setTimeout(function(){
+     window.location="Bank_NoEnd.html";
+   },3000); 
+})();
+</script>
+<html>
+   <head>
+     <meta name="viewport" content="width=devide-width, initial-scale=1">
+<link rel="stylesheet" href="material.min.css">
+<script src="material.min.js"></script>
+<link rel = "stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+   </head>
+<body>
+  <div class="MDL-LAYOUT MDL-JS-LAYOUT">
+      <main class="mdl-layout__content">
+         <h1> Jack Bank </h1>
+         <br/>
+         <div class="content-grid" >
+          <div class="mdl-grid center">
+            <div class="mdl-layout-spacer"></div>
+             <h2> Printing Receipt... </h2>
+            <div class="mdl-layout-spacer"></div>
+          </div>
+          <div class="mdl-grid center">
+            <div class="mdl-layout-spacer"></div>
+             <div class="loader" align="center"></div>
+            <div class="mdl-layout-spacer"></div>
+          </div>
+         
+      </main>
+  </div>
+</body>
+
+</html>

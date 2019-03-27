@@ -1,0 +1,77 @@
+<script type="text/javascript">
+	function next(){
+		location.href = "Bank_Pin.html"
+	}
+</script>
+<style>
+h1 {
+   font-weight: bold;
+   text-align: center;
+   color: orange;
+}
+h2 {
+   text-align:center;
+   color:yellow;
+   font-size: 15px;
+}
+body {
+	border-style: solid;
+	border-color: yellow;
+	height:500px;
+   background: #000000;
+}
+.btn{
+	margin:0 auto;
+	background-color: black;
+	text-align:: center;
+	padding : 5px 5px 5px 5px;
+}
+.flash {
+   animation-name: flash;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-play-state: running;
+}
+
+@keyframes flash {
+    from {color: yellow;}
+    to {color: white;}
+}
+</style>
+<html>
+   <head>
+     <meta name="viewport" content="width=devide-width, initial-scale=1">
+<link rel="stylesheet" href="material.min.css">
+<script src="material.min.js"></script>
+<link rel = "stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+   </head>
+<body onclick="next();">
+	<div class="MDL-LAYOUT MDL-JS-LAYOUT">
+
+      <main class="mdl-layout__content">
+          <h1> Jack Bank </h1>
+         <br/><br/>
+         <div class="content-grid" >
+         <div class="mdl-grid center">
+            <div class="mdl-layout-spacer"></div>
+            	<h2 class="flash"> Welcome! </h2>
+            <div class="mdl-layout-spacer"></div>
+          </div>
+         <div class="mdl-grid center">
+            <div class="mdl-layout-spacer"></div>
+              <h2 class="flash">Touch To Continue</h2>
+            <div class="mdl-layout-spacer"></div>
+          </div>
+         <div class="mdl-grid center">
+            <div class="mdl-layout-spacer"></div>
+             <button class ="flash btn" onclick="next();"> <i class="material-icons">pan_tool</i></button>
+            <div class="mdl-layout-spacer"></div>
+         </div>
+        </div>
+      </main>
+   </div>
+</body>
+<footer></footer>
+</html>

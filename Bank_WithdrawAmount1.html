@@ -1,0 +1,191 @@
+<style>
+body {
+   background: #000000;
+}
+
+h1 {
+   font-weight: bold;
+   text-align: center;
+   color: orange;
+}
+
+h2{
+  text-align:center;
+  color: white;
+  font-size: 15px;
+}
+  .btn {
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  font-family: Georgia;
+  color: #000000;
+  font-size: 30px;
+  background: #ffff00;
+  padding: 5px 10px 5px 10px;
+  text-decoration: none;
+  margin:auto;
+}
+
+.btn:hover {
+  background: #00ff00;
+  background-image: -webkit-linear-gradient(top, #00ff00, #00ff00);
+  background-image: -moz-linear-gradient(top, #00ff00, #00ff00);
+  background-image: -ms-linear-gradient(top, #00ff00, #00ff00);
+  background-image: -o-linear-gradient(top, #00ff00, #00ff00);
+  background-image: linear-gradient(to bottom, #00ff00, #00ff00);
+  text-decoration: none;
+}
+.center{
+  padding:70px 0;
+  text-align:center;
+  margin:auto;
+  width: 50%;
+  top: 50%;
+  position: relative;
+}
+.text{
+  color:yellow;
+  background-color: black;
+  text-align: center;
+}
+.label{
+	text-align:center;
+	width:50%;
+	color: rgba(white, .5);
+  	font: 400 $width/15 Roboto;
+  	background-color: yellow;
+	font-size:16px;
+}
+.label2{
+	text-align:center;
+	width:100%;
+	color: rgba(white, .5);
+  	font: 600 $width/30 Roboto;
+	font-size:20px;
+  	background-color: yellow;
+}
+</style>
+<script type="text/javascript">
+  function add(a){
+    var label = document.getElementById("Pin").value;
+	var counter = document.getElementById("counter").value;
+	var size = counter.length;
+    var btn = document.getElementById("reset");
+	var btn1 = document.getElementById("zero");
+	var temp=[0,0,0,0,0];
+	if (size==0){
+    document.getElementById("counter").value = a;
+    document.getElementById("Pin").value = "RM 0"+a+".00";
+    btn1.disabled =false;
+  }else if(size==1){
+    document.getElementById("counter").value = counter+a;
+    document.getElementById("Pin").value = "RM "+counter+a+".00";
+  }else if (size==2){
+    document.getElementById("counter").value = counter+a;
+    temp[0] = parseInt(counter) % 10;
+    temp[1] = (parseInt(counter)-temp[0])/10;
+    document.getElementById("Pin").value = "RM "+temp[1]+temp[0]+a+".00";
+  }else if (size==3){
+    document.getElementById("counter").value = counter+a;
+    temp[0] = parseInt(counter) % 10;
+    temp[1] = ((parseInt(counter)%100) - temp[0])/10;
+    temp[2] = (parseInt(counter)-(parseInt(counter)%100))/100;
+    document.getElementById("Pin").value = "RM "+temp[2]+temp[1]+temp[0]+a+".00";
+  }else if (size>3){
+    document.getElementById("msg").value = "Transfer Cannot be over RM9,999";
+  } 
+	
+	if (size>-1) {
+		btn.disabled =false;
+	}
+  }
+
+  function clean(){
+  	var str = "";
+  	document.getElementById("Pin").value = str;
+  	var btn = document.getElementById("reset");
+  	btn.disabled =true;
+	var btn1 = document.getElementById("zero");
+  	btn1.disabled =true;
+	document.getElementById("counter").value = "";
+	document.getElementById("msg").value = "Current Account: RM 2,149.56";
+  }
+  function exit(){
+    window.location = "Bank_Menu.html";
+  }
+
+  function submit(){
+	var array;
+	array = document.getElementById("Pin").value.split(" ");
+	var temp = array[1].replace(",", "");
+	if (parseFloat(temp)>2149.56){
+		window.location = "Bank_Invalid3.html";
+	}
+	else {
+		window.location = "Bank_Loading4.html";
+	}
+  }
+  
+  function load(){
+	document.getElementById("counter").value = "";
+	var btn1 = document.getElementById("zero");
+  	btn1.disabled =true;
+  }
+</script>
+<html>
+   <head>
+     <meta name="viewport" content="width=devide-width, initial-scale=1">
+<link rel="stylesheet" href="material.min.css">
+<script src="material.min.js"></script>
+<link rel = "stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+   </head>
+<body onload="load();">
+	<div class="MDL-LAYOUT MDL-JS-LAYOUT">
+      <main class="mdl-layout__content">
+         <h1> Jack Bank </h1>
+         <h2> Enter Custom Amount </h2>
+		 
+         <div class="content-grid" >
+		  <div class="mdl-grid center">
+            <div class="mdl-layout-spacer"></div>
+             <input class="label2" type="text" id="msg" onkeydown="return false" value="Current Account: RM 2,149.56"/>
+            <div class="mdl-layout-spacer"></div>
+          </div>
+          <div class="mdl-grid center">
+            <div class="mdl-layout-spacer"></div>
+             <input class="label" type="text" id="Pin" placeholder="Amount" onkeydown="return false"/>
+            <div class="mdl-layout-spacer"></div>
+          </div>
+           <div class="mdl-grid center">
+              <button class ="btn mdl-cell--2-col" onclick="add(7);"> 7</button>
+              <button class ="btn mdl-cell--2-col" onclick="add(8);"> 8</button>
+              <button class ="btn mdl-cell--2-col "onclick="add(9);"> 9</button>
+           </div>
+           <div class="mdl-grid center">
+              <button class ="btn mdl-cell--2-col"onclick="add(4);"> 4</button>
+              <button class ="btn mdl-cell--2-col"onclick="add(5);"> 5</button>
+              <button class ="btn mdl-cell--2-col "onclick="add(6);"> 6</button>
+           </div>
+           <div class="mdl-grid center">
+              <button class ="btn mdl-cell--2-col"onclick="add(1);"> 1</button>
+              <button class ="btn mdl-cell--2-col"onclick="add(2);"> 2</button>
+              <button class ="btn mdl-cell--2-col "onclick="add(3);"> 3</button>
+           </div>
+           <div class="mdl-grid center">
+              <button class ="btn mdl-cell--2-col" onclick="clean();"> <i class="material-icons">keyboard_backspace</i></button>
+              <button class ="btn mdl-cell--2-col" id="zero" onclick="add(0);"> 0</button>
+              <button class ="btn mdl-cell--2-col " id="reset" disabled="disabled" onclick="submit();"> <i class="material-icons">check_circle</i></button>
+           </div>
+           <div class="mdl-grid center">
+            <div class="mdl-layout-spacer"></div>
+             <button class="mdl-cell--6-col btn" onclick="exit();"><i class="material-icons">directions_run</i>  Abort</button>
+            <div class="mdl-layout-spacer"></div>
+          </div>
+		  <input type="text" style="visibility:hidden;" id="counter" value="0"/>
+         </div>
+         </div>
+      </main>
+   </div>
+</body>
+</html>

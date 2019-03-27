@@ -1,0 +1,138 @@
+<style>
+body {
+   background: #000000;
+}
+
+h1 {
+   font-weight: bold;
+   text-align: center;
+   color: orange;
+}
+
+h2{
+  text-align:center;
+  color: white;
+  font-size: 15px;
+}
+  .btn {
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  font-family: Georgia;
+  color: #000000;
+  font-size: 30px;
+  background: #ffff00;
+  padding: 5px 10px 5px 10px;
+  text-decoration: none;
+  margin:auto;
+}
+
+.btn:hover {
+  background: #00ff00;
+  background-image: -webkit-linear-gradient(top, #00ff00, #00ff00);
+  background-image: -moz-linear-gradient(top, #00ff00, #00ff00);
+  background-image: -ms-linear-gradient(top, #00ff00, #00ff00);
+  background-image: -o-linear-gradient(top, #00ff00, #00ff00);
+  background-image: linear-gradient(to bottom, #00ff00, #00ff00);
+  text-decoration: none;
+}
+.center{
+  padding:70px 0;
+  text-align:center;
+  margin:auto;
+  width: 50%;
+  top: 50%;
+  position: relative;
+}
+.text{
+  color:yellow;
+  background-color: black;
+  text-align: center;
+}
+.label{
+	text-align:center;
+	width:50%;
+	color: rgba(white, .5);
+  	font: 400 $width/15 Roboto;
+  	background-color: yellow;
+}
+</style>
+<script type="text/javascript">
+  function add(a){
+    var label = document.getElementById("Pin").value;
+    var lgth = label.length;
+    var btn = document.getElementById("reset");
+    document.getElementById("Pin").value = label+a;
+	if (lgth>=0) {
+		btn.disabled =false;
+	}
+  }
+
+  function clean(){
+  	var str = "";
+  	document.getElementById("Pin").value = str;
+  	var btn = document.getElementById("reset");
+  	btn.disabled =true;
+  }
+  function exit(){
+    window.location = "Bank_Menu.html";
+  }
+
+  function submit(){
+	var label = document.getElementById("Pin").value;
+	var lgth = label.length;
+	if (lgth>0){
+		window.location = "Bank_Transfer1.html";
+	}
+  }
+</script>
+<html>
+   <head>
+     <meta name="viewport" content="width=devide-width, initial-scale=1">
+<link rel="stylesheet" href="material.min.css">
+<script src="material.min.js"></script>
+<link rel = "stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+   </head>
+<body>
+	<div class="MDL-LAYOUT MDL-JS-LAYOUT">
+      <main class="mdl-layout__content">
+         <h1> Jack Bank </h1>
+         <h2>Within The Same Bank</h2>
+         <h2> Enter Account Number </h2>
+         <div class="content-grid" >
+          <div class="mdl-grid center">
+            <div class="mdl-layout-spacer"></div>
+             <input class="label" type="text" id="Pin" placeholder="ACCOUNT NUMBER" onkeydown="return false"/>
+            <div class="mdl-layout-spacer"></div>
+          </div>
+           <div class="mdl-grid center">
+              <button class ="btn mdl-cell--2-col" onclick="add(7);"> 7</button>
+              <button class ="btn mdl-cell--2-col" onclick="add(8);"> 8</button>
+              <button class ="btn mdl-cell--2-col "onclick="add(9);"> 9</button>
+           </div>
+           <div class="mdl-grid center">
+              <button class ="btn mdl-cell--2-col"onclick="add(4);"> 4</button>
+              <button class ="btn mdl-cell--2-col"onclick="add(5);"> 5</button>
+              <button class ="btn mdl-cell--2-col "onclick="add(6);"> 6</button>
+           </div>
+           <div class="mdl-grid center">
+              <button class ="btn mdl-cell--2-col"onclick="add(1);"> 1</button>
+              <button class ="btn mdl-cell--2-col"onclick="add(2);"> 2</button>
+              <button class ="btn mdl-cell--2-col "onclick="add(3);"> 3</button>
+           </div>
+           <div class="mdl-grid center">
+              <button class ="btn mdl-cell--2-col" onclick="clean();"> <i class="material-icons">keyboard_backspace</i></button>
+              <button class ="btn mdl-cell--2-col" onclick="add(0);"> 0</button>
+              <button class ="btn mdl-cell--2-col " id="reset" disabled="disabled" onclick="submit();"> <i class="material-icons">check_circle</i></button>
+           </div>
+           <div class="mdl-grid center">
+            <div class="mdl-layout-spacer"></div>
+             <button class="mdl-cell--6-col btn" onclick="exit();"><i class="material-icons">directions_run</i>  Abort</button>
+            <div class="mdl-layout-spacer"></div>
+          </div>
+         </div>
+         </div>
+      </main>
+   </div>
+</body>
+</html>

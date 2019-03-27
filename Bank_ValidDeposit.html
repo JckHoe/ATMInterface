@@ -1,0 +1,123 @@
+<style>
+body {
+   background: #000000;
+}
+
+h1 {
+   font-weight: bold;
+   text-align: center;
+   color: orange;
+}
+h2{
+  text-align:center;
+  color: white;
+  font-size: 13px;
+}
+h3 {
+	text-align center;
+	color: yellow;
+	font-size: 3px;
+}
+.center{
+  padding:30px 0;
+  text-align:center;
+  margin:auto;
+  width: 50%;
+  top: 10%;
+  position: relative;
+}
+ .btn {
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  font-family: Georgia;
+  color: #000000;
+  font-size: 30px;
+  background: #ffff00;
+  padding: 5px 10px 5px 10px;
+  text-decoration: none;
+  margin:auto;
+}
+
+.btn:hover {
+  background: #00ff00;
+  background-image: -webkit-linear-gradient(top, #00ff00, #00ff00);
+  background-image: -moz-linear-gradient(top, #00ff00, #00ff00);
+  background-image: -ms-linear-gradient(top, #00ff00, #00ff00);
+  background-image: -o-linear-gradient(top, #00ff00, #00ff00);
+  background-image: linear-gradient(to bottom, #00ff00, #00ff00);
+  text-decoration: none;
+}
+.table {
+	width:100%;
+	color:yellow;
+	text-align:center;
+}
+</style>
+<script type="text/javascript">
+(function(){
+   setTimeout(function(){
+     window.location="Bank_Main.html";
+   },10000); 
+})();
+	function yes(){
+		window.location = "Bank_YesEnd.html";
+	}
+	
+	function no(){
+		window.location = "Bank_NoEnd.html";
+	}
+</script>
+<html>
+   <head>
+     <meta name="viewport" content="width=devide-width, initial-scale=1">
+<link rel="stylesheet" href="material.min.css">
+<script src="material.min.js"></script>
+<link rel = "stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+   </head>
+<body>
+  <div class="MDL-LAYOUT MDL-JS-LAYOUT">
+      <main class="mdl-layout__content">
+         <h1> Jack Bank </h1>
+         <div class="content-grid" >
+          <div class="mdl-grid center">
+            <div class="mdl-layout-spacer"></div>
+             <h2> Deposit Summary</h2>
+            <div class="mdl-layout-spacer"></div>
+          </div>
+			<div class="mdl-grid center">
+			<div class="mdl-layout-spacer"></div>
+			<table class="table">
+			  <tr>
+			    <td>RM 10.00</td>
+			    <td>x 6</td> 
+			  </tr>
+			  <tr>
+			    <td>RM 50.00</td>
+			    <td>x 6</td> 
+			  </tr>
+			  <tr>
+			    <th>Total </th> 
+			    <th>RM 360.00</th>
+			  </tr>
+			</table>
+			<div class="mdl-layout-spacer"></div>
+			</div>
+         <div class="mdl-grid center">
+            <div class="mdl-layout-spacer"></div>
+             <h2> Print Receipt?</h2>
+            <div class="mdl-layout-spacer"></div>
+          </div>
+		 <div class="mdl-grid center">
+            <div class="mdl-layout-spacer"></div>
+             <button class="mdl-cell--3-col btn" onclick="yes();"><i class="material-icons">done</i>  Yes</button>
+            <div class="mdl-layout-spacer"></div>
+			<div class="mdl-layout-spacer"></div>
+             <button class="mdl-cell--3-col btn" onclick="no();"><i class="material-icons">clear</i>  No</button>
+            <div class="mdl-layout-spacer"></div>
+          </div>
+      </main>
+  </div>
+</body>
+
+</html>

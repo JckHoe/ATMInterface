@@ -1,0 +1,170 @@
+<style>
+body {
+   background: #000000;
+}
+
+h1 {
+   font-weight: bold;
+   text-align: center;
+   color: orange;
+}
+h2{
+  text-align:center;
+  color: white;
+  font-size: 15px;
+}
+  .btn {
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  font-family: Georgia;
+  color: #000000;
+  font-size: 30px;
+  background: #ffff00;
+  padding: 5px 10px 5px 10px;
+  text-decoration: none;
+  margin:auto;
+  height:100px;
+  width:70px;
+}
+
+.btn:hover {
+  background: #00ff00;
+  background-image: -webkit-linear-gradient(top, #00ff00, #00ff00);
+  background-image: -moz-linear-gradient(top, #00ff00, #00ff00);
+  background-image: -ms-linear-gradient(top, #00ff00, #00ff00);
+  background-image: -o-linear-gradient(top, #00ff00, #00ff00);
+  background-image: linear-gradient(to bottom, #00ff00, #00ff00);
+  text-decoration: none;
+}
+.center{
+  padding:70px 0;
+  text-align:center;
+  margin:auto;
+  width: 50%;
+  top: 50%;
+  position: relative;
+}
+.text{
+  color:yellow;
+  background-color: black;
+  text-align: center;
+}
+.label{
+	text-align:center;
+	width:100%;
+	color: rgba(white, .5);
+  	font: 400 $width/15 Roboto;
+  	background-color: yellow;
+	font-size: 20px;
+}
+</style>
+<script type="text/javascript">
+  function exit(){
+	window.location = "Bank_Menu.html";
+  }
+  function other(){
+	window.location = "Bank_WithdrawAmount1.html";
+  }
+  function withdraw(a){
+	if (a==50){
+		document.getElementById("txt").value = "After Withdraw Amount : RM 2,099.56";
+	}else if (a==100){
+		document.getElementById("txt").value = "After Withdraw Amount : RM 2,049.56";
+	}else if (a==300){
+		document.getElementById("txt").value = "After Withdraw Amount : RM 1,849.56";
+	}else if (a==500){
+		document.getElementById("txt").value = "After Withdraw Amount : RM 1,649.56";
+	}
+	
+	if (a<=2149.56){
+	var btn1 = document.getElementById("btn1");
+	btn1.disabled = true;
+	var btn2 = document.getElementById("btn2");
+	btn2.disabled = true;
+	var btn3 = document.getElementById("btn3");
+	btn3.disabled = true;
+	var btn4 = document.getElementById("btn4");
+	btn4.disabled = true;
+	var btn6 = document.getElementById("btn6");
+	btn6.disabled = true;
+	var btn7 = document.getElementById("btn7");
+	btn7.style.visibility = "visible";
+	var btn8 = document.getElementById("btn8");
+	btn8.style.visibility = "visible";
+	}
+  }
+  
+  function no(){
+	var btn1 = document.getElementById("btn1");
+	btn1.disabled = false;
+	var btn2 = document.getElementById("btn2");
+	btn2.disabled = false;
+	var btn3 = document.getElementById("btn3");
+	btn3.disabled = false;
+	var btn4 = document.getElementById("btn4");
+	btn4.disabled = false;
+	var btn6 = document.getElementById("btn6");
+	btn6.disabled = false;
+	var btn7 = document.getElementById("btn7");
+	btn7.style.visibility = "hidden";
+	var btn8 = document.getElementById("btn8");
+	btn8.style.visibility = "hidden";
+  }
+  
+  function yes(){
+	window.location = "Bank_Loading4.html";
+  }
+</script>
+<html>
+   <head>
+     <meta name="viewport" content="width=devide-width, initial-scale=1">
+<link rel="stylesheet" href="material.min.css">
+<script src="material.min.js"></script>
+<link rel = "stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+   </head>
+<body>
+  <div class="MDL-LAYOUT MDL-JS-LAYOUT">
+      <main class="mdl-layout__content">
+         <h1> Jack Bank </h1>
+         
+        <div class="mdl-grid center">
+          <div class="mdl-layout-spacer"></div>
+		  <input class="label" type="text" id="txt" onkeydown="return false" value="Withdraw"/>
+          <div class="mdl-layout-spacer"></div>
+        </div>
+		<div class="mdl-grid center">
+          <div class="mdl-layout-spacer"></div>
+          <button id = "btn1" class="mdl-cell--4-col btn" onclick="withdraw(50);"><i class="material-icons">attach_money</i>  RM 50.00</button>
+          <div class="mdl-cell--1-col mdl-layout-spacer"></div>
+          <button id = "btn2" class="mdl-cell--4-col btn" onclick="withdraw(100);"><i class="material-icons">attach_money</i>  RM 100.00</button>
+          <div class="mdl-layout-spacer"></div>
+        </div>
+        <div class="mdl-grid center">
+          <div class="mdl-layout-spacer"></div>
+          <button id = "btn3" class="mdl-cell--4-col btn" onclick="withdraw(300);"><i class="material-icons">attach_money</i>  RM 300.00</button>
+          <div class=" mdl-cell--1-col mdl-layout-spacer"></div>
+          <button id = "btn4" class="mdl-cell--4-col btn" onclick="withdraw(500);"><i class="material-icons">attach_money</i>  RM 500.00</button>
+          <div class="mdl-layout-spacer"></div>
+        </div>
+		<div class="mdl-grid center">
+          <div class="mdl-layout-spacer"></div>
+          <button id = "btn5" class="mdl-cell--4-col btn" onclick="exit();"><i class="material-icons">directions_run</i>  Back To Menu</button>
+          <div class=" mdl-cell--1-col mdl-layout-spacer"></div>
+          <button id = "btn6" class="mdl-cell--4-col btn" onclick="other();"><i class="material-icons">attach_money</i>  Other Amount</button>
+          <div class="mdl-layout-spacer"></div>
+        </div>
+		<div class="mdl-grid center">
+          <div class="mdl-layout-spacer"></div>
+          <button id = "btn7" class="mdl-cell--4-col btn" style="visibility:hidden;" onclick="no();"><i class="material-icons">clear</i>  Cancel</button>
+          <div class=" mdl-cell--1-col mdl-layout-spacer"></div>
+          <button id = "btn8" class="mdl-cell--4-col btn" style="visibility:hidden;" onclick="yes();"><i class="material-icons">done</i>  Confirm</button>
+          <div class="mdl-layout-spacer"></div>
+        </div>
+      </main>
+  </div>
+</body>
+<footer>
+  
+</footer>
+</html>
